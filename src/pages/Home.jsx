@@ -22,6 +22,19 @@ const Home = () => {
                         <i className="bi bi-dash"></i>
                     </button>
                 </div>
+                <div className="col-md-12">
+                    <ul className="list-group my-3">
+                        {
+                            !!state.store.users &&
+                            Array.isArray(state.store.users) &&
+                            state?.store?.users.map((user) => (
+                                <li key={user.id} className="list-group-item list-group-item-action">
+                                    {user?.name}
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
             </div>
         </div>
     )
